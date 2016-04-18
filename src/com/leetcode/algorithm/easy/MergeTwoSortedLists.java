@@ -26,7 +26,6 @@ public class MergeTwoSortedLists {
 	 * 代码①
 	 */
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        if (null == l1 && null == l2) return null;
         if (null == l1) return l2;
         if (null == l2) return l1;
         ListNode head = new ListNode(-1);
@@ -55,7 +54,6 @@ public class MergeTwoSortedLists {
     	/*
     	 * 递归到某一条链表为null时，返回另一条链表
     	 */
-        if (null == l1 && null == l2) return null;
         if (null == l1) return l2;
         if (null == l2) return l1;
         
