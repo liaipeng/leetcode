@@ -1,7 +1,5 @@
 package com.leetcode.algorithm.easy;
 
-
-
 /*
 Given a roman numeral, convert it to an integer.
 
@@ -115,7 +113,6 @@ public class RomanToInteger {
           if(c[count]=='X') sum+=10;
           if(c[count]=='V') sum+=5;
           if(c[count]=='I') sum+=1;
-
       }
 
       return sum;

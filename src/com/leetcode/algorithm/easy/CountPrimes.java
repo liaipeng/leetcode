@@ -49,6 +49,7 @@ public class CountPrimes {
       * 代码②
       */
      public int countPrimes_2(int n) {
+    	 if (n <= 2) return 0;
          boolean[] isPrime = new boolean[n];
          Arrays.fill(isPrime, true); // 初始化数组，虽然0和1不是素数，不过没关系，后面不会碰到
          // 埃拉托色尼筛选法开始
@@ -74,6 +75,7 @@ public class CountPrimes {
       * 由于一个合数总是可以分解成若干个质数的乘积，那么如果把质数（最初只知道2是质数）的倍数都去掉，那么剩下的就是质数了。
       */
      public int countPrimes_3(int n) {
+    	 if (n <= 2) return 0;
          boolean[] isPrime = new boolean[n]; 
          Arrays.fill(isPrime, true); // 初始化所有数都是素数
          int count = 0;

@@ -26,15 +26,11 @@ package com.leetcode.algorithm.easy;
 public class ExcelSheetColumnNumber {
 	public static int titleToNumber(String s) {
 		char[] chs = s.toCharArray();
-		int number = 0;
-		int tempNum = 0;
+		int number = 0, tempNum = 0, j = 0;
 
-		for (int i = chs.length, j = 0; i > 0; i--, j++) {
-			tempNum = (chs[i - 1] + 1 - 65) * (int) Math.pow(26, j);
-			// System.out.println(chs[i-1]);
-			// System.out.println("tempNum:" + tempNum);
-
-			number = tempNum + number;
+		for (int i = chs.length - 1; i >= 0; i--) {
+			tempNum = (chs[i] + 1 - 'A') * (int) Math.pow(26, j++);
+			number += tempNum;
 		}
 
 		return number;

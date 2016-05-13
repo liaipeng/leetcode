@@ -25,7 +25,7 @@ public class SummaryRanges {
 	 */
     public List<String> summaryRanges(int[] nums) {
         List<String> ranges = new LinkedList<String>(); 
-        if (nums.length == 0) return ranges;
+        if (nums == null || nums.length == 0) return ranges;
         int start = nums[0], end = nums[0]; // start为范围起始，end为范围的末尾，初始为nums[0]
         for (int i = 0; i < nums.length - 1; ++i) {
         	// 如果下一个数不是当前数+1，说明范围断了，把当前start和end存入ranges中，start重定位为下一个数
@@ -50,7 +50,7 @@ public class SummaryRanges {
      */
     public List<String> summaryRanges_2(int[] nums) {
         List<String> ranges = new LinkedList<String>();
-        if (nums.length == 0) return ranges;
+        if (nums == null || nums.length == 0) return ranges;
         for (int i = 0; i < nums.length; i++) {
             int start = nums[i];
             // 如果下一个数与当前数相差1，i往后移动，直到下一个数与当前数不差1，则从start到nums[i]即为1个范围

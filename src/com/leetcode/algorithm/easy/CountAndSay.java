@@ -53,7 +53,7 @@ public class CountAndSay {
      * 如果有大量字符串拼接的操作，StringBuffer的效率要比String快非常多
      * 因为append不需要每次都复制一次原来字符串的值。
      * 
-     * String既属于引用类型也属于基础数据类型，而且内容是静态的，在通常情况效率高些   
+     * 	String既属于引用类型也属于基础数据类型，而且内容是静态的，在通常情况效率高些   
   	 *	但如果涉及到连接字符串的时候，对于String每次连接都要重新分配内存，因此StringBuffer好些   
   	 *	总之，对于静态处理，如：储存字符串，用String   
   	 *	动态改变字符串内容则使用StringBuffer

@@ -22,6 +22,22 @@ getMin() -- Retrieve the minimum element in the stack.
  * 代码②，10ms，只用一条栈实现，栈中存储的是x和min的差值，很巧妙的解法
  * 
  * 代码③，9ms，只用一条栈实现，每次min值改变的时候，在新的min值入栈之前，把旧的min值入栈。也就是说每个新的min值栈底下一层都有一个旧的min值
+ * 
+ *
+ * 剑指offer:
+ * 
+ * 用两个栈，我觉得比我在印象笔记中记录的3种做法都更好理解，若是可以使用两个栈，首选这种解法。
+ * 
+ * 本题是在“举例让抽象问题具体化”章节。
+ * 就是通过一个具体的实例来演算，帮助理解题目。
+ * 
+ * 例如，首先往空的数据栈里压入数字3，显然3是最小值，那么也把这个最小值压入辅助栈中。
+ * 接下来，压入数字4，由于4大于之前的最小值，因此仍然在辅助栈中压入3。
+ * 第三步，压入数字2，此时，则在辅助栈中压入2。
+ * 以此类推。
+ * 可以用一个表格帮助理解。
+ * 
+ * 见代码④
  */
 
 public class MinStack {
@@ -126,5 +142,39 @@ public class MinStack {
 
     public int getMin_3() {
         return min3;
+    }
+    
+    
+	/*
+	 * 代码④
+	 */
+	Stack<Integer> stack4 = new Stack<>(); // 数据栈
+	Stack<Integer> minStack = new Stack<>(); // 辅助栈
+	
+    public void push_4(int node) {
+        if (stack4.isEmpty()) { // 若是空栈
+        	stack4.push(node);
+        	minStack.push(node);
+        } else {
+        	stack4.push(node);
+        	if (node < minStack.peek()) { // 判断当前压入的元素是否比最小值小
+        		minStack.push(node);
+        	} else {
+        		minStack.push(minStack.peek());
+        	}
+        }
+    }
+    
+    public void pop_4() {
+    	stack4.pop();
+        minStack.pop();
+    }
+    
+    public int top_4() {
+        return stack.peek();
+    }
+    
+    public int getMin_4() {
+        return minStack.peek();
     }
 }

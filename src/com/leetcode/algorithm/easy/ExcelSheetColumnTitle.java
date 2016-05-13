@@ -31,16 +31,16 @@ For example:
 
 public class ExcelSheetColumnTitle {
     public static String convertToTitle(int n) {
-    	String title = "";
+        StringBuilder title = new StringBuilder("");
     	while(n > 0) {
-    		title = String.valueOf((char)((n - 1) % 26 + 'A')) + title;   		    		
+    		title.append((char) ((n-1) % 26 + 'A'));
     		n = (n - 1) / 26;    		
     	}
-    	return title;
+    	return title.reverse().toString();
     }
     
     public static void main(String[] args) {
-    	String str = convertToTitle(703);
+    	String str = convertToTitle(1);
     	System.out.println(str);
 	}
 }

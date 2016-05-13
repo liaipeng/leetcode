@@ -58,8 +58,8 @@ Another example is LCA of nodes 2 and 4 is 2, since a node can be a descendant o
  *  Discuss里有人用不需要比较的方法，哈，如方法② 11ms,14.59%
  */
 public class LowestCommonAncestorOfABinarySearchTree {
-/*	
- * 方法①
+	
+    // 方法①
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
     	//如果root的值比p和q的值都大，那公共祖先一定在左子树
         if (root.val > Math.max(p.val, q.val)) return lowestCommonAncestor(root.left, p, q);
@@ -68,20 +68,20 @@ public class LowestCommonAncestorOfABinarySearchTree {
         //其实这一分支包括了：1.root的值介于p和q之间，那么最小公共祖先一定是root. 2.root的值等于p的值或q的值，那么最小公共祖先一定是root
         return root;
     }
-    */
+    
 	
-/*	
- * 方法②
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+	
+    // 方法②
+    public TreeNode lowestCommonAncestor_2(TreeNode root, TreeNode p, TreeNode q) {
         if(root==null || root==p || root==q) return root;
 
-        TreeNode left = lowestCommonAncestor(root.left,p,q);
-        TreeNode right = lowestCommonAncestor(root.right,p,q);
+        TreeNode left = lowestCommonAncestor_2(root.left,p,q);
+        TreeNode right = lowestCommonAncestor_2(root.right,p,q);
 
         if(left==null) return right;
         if(right==null) return left;
 
         return root;
     }
-    */
+    
 }

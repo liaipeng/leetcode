@@ -39,7 +39,7 @@ public class PalindromeNumber {
     public static boolean isPalindrome(int x) {
         int rev = 0;
         int reminder = x;
-        // 逆转x，每进入一次喜欢，rev就乘以10，往高位推一位
+        // 逆转x，每进入一次循环，rev就乘以10，往高位推一位
         while (reminder > 0) {
             rev = rev * 10 + reminder % 10;
             reminder /= 10;

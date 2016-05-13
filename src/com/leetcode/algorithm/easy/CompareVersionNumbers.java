@@ -64,8 +64,8 @@ public class CompareVersionNumbers {
         int len = Math.max(ver1.length, ver2.length);
         for (int i = 0; i < len; i++) {
         	// 这一部分巧妙的减少了大量的代码量，避免了代码①for循环之后冗长的处理：其中一个version遍历结束了，之后都用0进行比较。
-            Integer v1 = i < ver1.length ? Integer.valueOf(ver1[i]) : 0;
-            Integer v2 = i < ver2.length ? Integer.valueOf(ver2[i]) : 0;
+            Integer v1 = i < ver1.length ? Integer.parseInt(ver1[i]) : 0;
+            Integer v2 = i < ver2.length ? Integer.parseInt(ver2[i]) : 0;
             if (v1 > v2) return 1;
             if (v1 < v2) return -1;
         }

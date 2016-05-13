@@ -9,7 +9,7 @@ Each time you can either climb 1 or 2 steps. In how many distinct ways can you c
 /*
  * 动态规划  http://www.cnblogs.com/steven_oyj/archive/2010/05/22/1741374.html，描述的不是很清楚，具体参考算法课程课件
  * 
- * 复习完DP算法，结果把问题想得过于复杂了，一直纠结于ways[i,j]，从第i层到第j层有几种走法，陷入死胡同了
+ * 复习完DP算法，结果把问题想得过于复杂了，一直纠结于ways[i,j]，从第i层到第j层有几种走法
  * 
  * 最后还是去看了Discuss的代码，其实思路很简单，对于第n阶楼梯，可以从第[n-2]阶楼梯跨两步到达，也可以从第[n-1]阶楼底跨一步到达两种情况。
  * 

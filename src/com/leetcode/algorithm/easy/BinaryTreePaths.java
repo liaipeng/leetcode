@@ -88,9 +88,9 @@ public class BinaryTreePaths {
         return paths;
     }
     private void searchBT(TreeNode root, String path, List<String> paths) {
-        if (root.left == null && root.right == null) paths.add(path + root.val);
-        if (root.left != null) searchBT(root.left, path + root.val + "->", paths);
-        if (root.right != null) searchBT(root.right, path + root.val + "->", paths);
+        if (root.left == null && root.right == null) paths.add(path + root.val); // 如果是叶节点，将当前path加入到集合中
+        if (root.left != null) searchBT(root.left, path + root.val + "->", paths); // 如果非叶结点，左子树不为空，递归遍历左子树
+        if (root.right != null) searchBT(root.right, path + root.val + "->", paths); // 同上
     }
 
 	/*

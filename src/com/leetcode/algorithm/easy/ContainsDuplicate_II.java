@@ -44,8 +44,8 @@ class ContainsDuplicate_II {
         Set<Integer> set = new HashSet<Integer>();
         for (int i = 0; i < nums.length; ++i) {
         	// 把超出窗口的元素删掉
-            if (i > k) set.remove(nums[i - k - 1]);
-            if (!set.add(nums[i])) return true;
+            if (i > k) set.remove(nums[i - k - 1]); // 注意，是remove nums[i - k - 1]，而不是remove(i-k-1)
+            if (!set.add(nums[i])) return true; // set.add() 如果添加成功，返回true；如果已经含有该元素，返回false。
         }
         return false;
     }

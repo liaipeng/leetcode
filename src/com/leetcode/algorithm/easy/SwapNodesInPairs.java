@@ -24,7 +24,7 @@ Your algorithm should use only constant space. You may not modify the values in 
  * 一对一对交换链表的节点，要求只能使用O(1)的空间，且不能修改节点的值
  * 
  * Discuss:
- * 代码①，0ms，用递归的方法，虽然代码很简洁，但是实际上是用了O(n)的空间，不服务题目要求。
+ * 代码①，0ms，用递归的方法，虽然代码很简洁，但是实际上是用了O(n)的空间，不符合题目要求。
  * 
  * 代码②，0ms，不用递归的方法，可以仅适用O(1)的空间解题。假表头的运用很巧妙，要多学习。
  */
@@ -36,7 +36,7 @@ public class SwapNodesInPairs {
     public ListNode swapPairs(ListNode head) {
         if (head == null || head.next == null) return head;
         ListNode node = head.next; // 记录head.next
-        head.next = swapPairs(head.next.next); // head.next指向swapPair后的shead.next.next，递归求解
+        head.next = swapPairs(head.next.next); // head.next指向swapPair后的head.next.next，递归求解
         node.next = head; // 原head.next指向head，也就是交换了第一个和第二个节点
         return node; // 第二个节点变为表头
     }

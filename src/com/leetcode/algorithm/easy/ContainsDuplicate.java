@@ -17,6 +17,8 @@ import java.util.Set;
  * 如果存在，return true
  * 
  * 复杂的为O(n)，耗时17ms
+ * 
+ * 另外，如果不能使用set的话，可以用快排排序，然后遍历一次，看看相邻的元素是否有重复的。O(nlogn)的复杂度。
  */
 
 public class ContainsDuplicate {
