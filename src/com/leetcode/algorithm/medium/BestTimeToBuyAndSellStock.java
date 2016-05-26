@@ -33,7 +33,8 @@ public class BestTimeToBuyAndSellStock {
         for (int curPrice : prices) {
         	// 比使用Math.max 和 Math.min 要快2ms
             if (minPrice > curPrice) minPrice = curPrice; // 若找到更低的价格，将minPrice替换为该买入价格
-            else if (curPrice - minPrice > maxProfit) maxProfit = curPrice - minPrice;//每天都尝试卖股票，若当天卖的钱比maxProfit高，替换maxProfit
+            //每天都尝试卖股票，若当天卖的钱比maxProfit高，替换maxProfit
+            else if (curPrice - minPrice > maxProfit) maxProfit = curPrice - minPrice;
         }
         return maxProfit;
     }
@@ -41,7 +42,7 @@ public class BestTimeToBuyAndSellStock {
     /*
      * 代码②
      * 将原问题进行转换，例如把给定的数组从{1, 7, 4, 11}考虑成{0, 6, -3, 7}
-     * 也就是把 股票每天的价格 转换成 股票每天的涨跌
+     * 也就是把 股票每天的价格 转换成 股票每天相较昨天的涨跌
      * 原问题也就变成，已知股票每天的涨跌，求在哪一天卖出能有最大效益
      * 问题也就变成了求{0, 6, -3, 7}的最大子串和
      */

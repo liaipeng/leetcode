@@ -8,7 +8,7 @@ import java.util.List;
 Given a collection of distinct numbers, return all possible permutations.
 
 For example,
-[1,2,3] have the following permutations:
+[1,2,3] have the following permutations:                                                 
 [1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], and [3,2,1].
 
 给定一个值不重复的数组，返回所有的排列情况
