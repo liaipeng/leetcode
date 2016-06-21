@@ -82,6 +82,7 @@ public class KthSmallestElementInABST {
             ans = root.val;
             return;
         }
+        if (root.right != null) inorderTraversal(root.right);
     }
     public int kthSmallest_2(TreeNode root, int k) {
         count = k;
